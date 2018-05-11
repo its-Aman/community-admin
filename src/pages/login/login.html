@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row class="row-login">
+      <ion-col col-12>
+        <form [formGroup]="loginForm">
+          <ion-list>
+
+            <ion-item>
+              <ion-label fixed>Username</ion-label>
+              <ion-input formControlName="username" type="text" (keyup.enter)="login()"></ion-input>
+            </ion-item>
+            <p class="error" *ngIf="loginForm?.controls['username']?.hasError('required') && (loginForm?.controls['username']?.dirty || isFormInvalid)">Username is Required</p>
+
+            <ion-item>
+              <ion-label fixed>Password</ion-label>
+              <ion-input formControlName="password" type="password" (keyup.enter)="login()"></ion-input>
+            </ion-item>
+            <p class="error" *ngIf="loginForm?.controls['password']?.hasError('required') && (loginForm?.controls['password']?.dirty || isFormInvalid)">Password is Required</p>
+
+          </ion-list>
+        </form>
+      </ion-col>
+      <ion-col col-12>
+        <button ion-button full (click)="login()">Login</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

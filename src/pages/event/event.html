@@ -1,0 +1,109 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Event</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col col-2>
+        <div class="flex-center">
+          S.No
+        </div>
+      </ion-col>
+      <ion-col col-2>
+        <div class="flex-center">
+          Event Name
+        </div>
+      </ion-col>
+      <ion-col col-2>
+        <div class="flex-center">
+          Type
+        </div>
+      </ion-col>
+      <ion-col col-2>
+        <div class="flex-center">
+          From-To Date
+        </div>
+      </ion-col>
+      <ion-col col-2>
+        <div class="flex-center">
+          Entry For
+        </div>
+      </ion-col>
+      <ion-col col-2>
+        <div class="flex-center">
+          Action
+        </div>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngFor="let _data of data; let i=index">
+      <ion-col col-2>
+        <div class="flex-center">
+          {{_data?.no}}
+        </div>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="flex-center">
+          {{_data?.event_name}}
+        </div>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="flex-center">
+          {{_data?.type}}
+        </div>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="flex-center">
+          {{_data?.date | date:'shortTime'}}
+        </div>
+      </ion-col>
+
+      <ion-col col-2>
+        <div class="flex-center">
+          {{_data?.entry_for}}
+        </div>
+      </ion-col>
+
+      <ion-col col-2>
+        <div *ngFor="let action of _data.action">
+          {{action}}
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-chip>
+            <ion-label color="secondary">Add</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label color="secondary">Edit</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label color="secondary">Delete</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label color="secondary">Toggle</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label color="secondary">Clear</ion-label>
+          </ion-chip>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

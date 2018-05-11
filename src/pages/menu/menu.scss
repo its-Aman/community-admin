@@ -1,0 +1,21 @@
+page-menu {
+  .menu-header-row-user {
+      margin: 20px 0 0 0;
+  }
+  .logo {
+    background-image: url('../assets/imgs/logo.png');
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+  }
+  .userImage {
+    background-image: url('../assets/imgs/user.png');
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+  }
+  .name{
+      display: flex;
+      align-items: center;
+  }
+}

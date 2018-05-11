@@ -1,0 +1,39 @@
+<ion-split-pane>
+  <ion-menu [content]="content">
+    <ion-header>
+      <ion-grid class="menu-header-grid" text-left>
+        <ion-row class="menu-header-row-logo">
+          <ion-col col-xs-6 col-sm-4 col-lg-3 col-md-4 class="logo image"></ion-col>
+          <ion-col col-xs-6 col-sm-8 col-lg-9 col-md-8 class="name">
+            <div>Community App</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="menu-header-row-user">
+          <ion-col col-xs-6 col-sm-4 col-lg-3 col-md-4 class="userImage image"></ion-col>
+          <ion-col col-xs-6 col-sm-8 col-lg-9 col-md-8 class="flex-center">
+            <div>
+              Welcome,
+              <br> Pritam Vidrohi
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-header>
+
+    <ion-content class="menu">
+      <ion-list text-center>
+
+        <ion-item class="item first">
+          <ion-icon name="home" item-start></ion-icon>
+          <button menuClose ion-item (click)="eventList()"> Event List </button>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootMenuPage" main #content swipeBackEnabled="false"></ion-nav>
+</ion-split-pane>
